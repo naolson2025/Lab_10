@@ -1,0 +1,29 @@
+{
+  "name": "lab_10",
+  "version": "1.0.0",
+  "description": "\"Have you visted all 50 states\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naolson2025/Lab_10.git"
+  },
+  "author": "Nick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naolson2025/Lab_10/issues"
+  },
+  "homepage": "https://github.com/naolson2025/Lab_10#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "pg": "^7.10.0",
+    "sequelize": "^5.7.0",
+    "sequelize-cli": "^5.4.0"
+  },
+  "devDependencies": {
+    "sqlite3": "^4.0.6"
+  }
+}
