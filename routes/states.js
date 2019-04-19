@@ -4,7 +4,7 @@ var States = require('../models').States;
 var router = express.Router();
 
 router.get('/states', function (req, res, next) {
-    States.findall({order: ['name']})
+    States.findAll({order: ['name']})
         .then(states =>{
             return res.json(states)
         })
@@ -12,3 +12,6 @@ router.get('/states', function (req, res, next) {
 });
 
 module.exports = router;
+
+
+
