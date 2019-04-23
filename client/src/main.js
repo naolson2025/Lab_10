@@ -1,9 +1,15 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-import BootstrapVue from 'bootstrap-vue'
+// import VueRouter library and this pp's routes
+import VueRouter from 'vue-router'
+import router from './router'
 
+import BootstrapVue from 'bootstrap-vue'
 import StateAPIService from '@/services/stateService'
+
+// use the VueRouter
+Vue.use(VueRouter);
 
 // config bootstrap
 Vue.use(BootstrapVue);
@@ -17,4 +23,6 @@ Vue.prototype.$stateService = StateAPIService;
 
 new Vue({
   render: h => h(App),
+  router
 }).$mount('#app');
+
