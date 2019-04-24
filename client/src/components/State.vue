@@ -1,7 +1,11 @@
 <template>
     <div class="state-summary p-2 rounded">
         <span class="m-2">{{ state.name }}</span>
-        <p><input id="visited" class="m-2" type="checkbox"></p>
+        <p>
+            <!--when is visited gets clicked the changed data is sent to the parent-->
+            <input id="visited" class="m-2" type="checkbox"
+            v-model="stateVisited" v-on:change="$emit('isVisited', stateName, stateVisited)">
+        </p>
     </div>
 </template>
 
@@ -13,7 +17,8 @@
         },
         data(){
             return {
-
+                stateName: this.state.name,
+                stateVisited: this.state.visited
             }
         }
     }

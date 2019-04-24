@@ -5,6 +5,7 @@
             <div class="p-2" v-for="state in states" v-bind:key="states.name">
                 <State
                     v-bind:state="state"
+                    v-on:isVisited="updateVisited"
                 ></State>
             </div>
         </div>
@@ -30,6 +31,11 @@
             getAll(){
                 this.$stateService.getAll().then(data => {
                     this.states = data
+                })
+            },
+            updateVisited(stateName, stateVisited){
+                this.$stateService.setVisited(stateName, stateVisited).then(data => {
+                    this.getAll()
                 })
             }
         }

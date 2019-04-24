@@ -11,6 +11,24 @@ router.get('/states', function (req, res, next) {
         .catch(err => next.err())
 });
 
+// matches with /state/?anything?
+router.patch('/state/:name', function (req, res, next) {
+    // sends data if state has been vistited or not
+    States.update({visited: req.body.visited}, {where: {
+            name: req.params.name
+        }})
+        .then(rows =>{
+            if (rows){
+                return res.send('ok')
+            } else {
+                // if no rows are modified return 404
+                return res.status(404).send()
+            }
+        })
+        // catch other errors
+        .catch(err => next.err())
+});
+
 module.exports = router;
 
 
