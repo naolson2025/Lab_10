@@ -9,7 +9,7 @@
 
         <p>
             <router-link v-bind:to="{ name: 'detail', params: { state: stateName}}">
-                <img src="map-icon" src="@/assets/icons8-world-map-64.png">
+                <img class="map-icon" src="@/assets/icons8-world-map-64.png">
             </router-link>
         </p>
 

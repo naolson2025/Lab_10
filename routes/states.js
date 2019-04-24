@@ -11,6 +11,22 @@ router.get('/states', function (req, res, next) {
         .catch(err => next.err())
 });
 
+// handle requests to /states/:name
+router.get('/states/:name', function (req, res, next) {
+    // Query that finds the state name in the database and returns json or not found error
+   States.findOne({where: {name: req.params.name}})
+       .then(state => {
+           if (state){
+               return res.json(state)
+           } else {
+               return res.status(404).send()
+           }
+       })
+       // handle other errors
+       .catch(err => next.err())
+});
+
+
 // matches with /state/?anything?
 router.patch('/state/:name', function (req, res, next) {
     // sends data if state has been vistited or not

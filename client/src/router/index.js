@@ -10,10 +10,12 @@ import StateDetail from '@/components/StateDetail'
 export default new Router({
     routes: [
         {
+            // Linked to StateList component
             path: '/',
             component: StateList
         },
         {
+            // linked to About component
             path: '/about',
             component: About
         },
@@ -21,7 +23,7 @@ export default new Router({
             // :state allows this path to be used for every state
             path: '/detail/:state',
             name: 'detail',
-            component: StateList
+            component: StateDetail
         }
     ]
 })

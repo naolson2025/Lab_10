@@ -20,7 +20,16 @@
         },
         mounted() {
             // will reflect anything after /detail in the route's path
-            this.state.name = this.$route.params.state
+            this.state.name = this.$route.params.state;
+            this.fetchStateData()
+        },
+        methods: {
+            // overwrites state object with data from the server
+            fetchStateData(){
+                this.$stateService.getOne( this.state.name ).then( data => {
+                    this.state = data
+                }).catch( err => console.error(err))
+            }
         }
     }
 </script>

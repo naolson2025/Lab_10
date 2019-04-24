@@ -12,7 +12,11 @@
             </span>
         </div>
 
-        <p class="text-right p-2">Header image by Unsplash</p>
+        <p class="text-right p-2">Header image by
+            <a href="https://unsplash.com/photos/TrhLCn1abMU">@dead____artist on Unsplash</a>
+            <br>
+            <a href="https://img.icons8.com/cotton/64/000000/world-map.png">Map icon by Icons8</a>
+        </p>
     </div>
 </template>
 
@@ -23,5 +27,8 @@
 </script>
 
 <style scoped>
-
+.credit{
+    font-size: 0.1em;
+    font-style: italic;
+}
 </style>
