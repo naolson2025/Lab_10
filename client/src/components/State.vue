@@ -6,6 +6,13 @@
             <input id="visited" class="m-2" type="checkbox"
             v-model="stateVisited" v-on:change="$emit('isVisited', stateName, stateVisited)">
         </p>
+
+        <p>
+            <router-link v-bind:to="{ name: 'detail', params: { state: stateName}}">
+                <img src="map-icon" src="@/assets/icons8-world-map-64.png">
+            </router-link>
+        </p>
+
     </div>
 </template>
 
@@ -30,5 +37,10 @@
         width: 10em;
         border: 1px #EEE solid;
         background-color: whitesmoke;
+    }
+    /* set size of map icon */
+    .map-icon{
+        width: 2em;
+        height: 2em;
     }
 </style>
