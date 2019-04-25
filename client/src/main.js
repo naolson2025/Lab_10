@@ -21,6 +21,9 @@ Vue.prototype.$stateService = StateAPIService;
 
 //Vue.config.productionTip = false;
 
+// add leaflet's CSS
+import "leaflet/dist/leaflet.css"
+
 new Vue({
   render: h => h(App),
   router
